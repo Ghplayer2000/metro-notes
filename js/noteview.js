@@ -40,5 +40,5 @@ function deleteNote(ind){
 
 function openEditor(event) {
     const noteIndex = event.target.closest('.note').dataset.index;
-    window.open(`editor.html?index=${noteIndex}`, '_blank');
+    window.location.href = `editor.html?index=${noteIndex}`, '_blank';
 }

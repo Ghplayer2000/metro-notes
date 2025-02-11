@@ -34,6 +34,8 @@ function addNotes() {
     }
 
     localStorage.setItem('notes', JSON.stringify(notes));
+    window.location.href = 'index.html';
+    
 }
 
 addNoteButton.addEventListener('click', addNotes);
