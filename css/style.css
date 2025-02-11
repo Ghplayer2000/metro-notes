@@ -26,9 +26,10 @@ body {
     padding-left: 16px;
     background-color: white;
     text-align: left;
-    color: blueviolet;
+    color: #AF52DE;
     font-size: 16px;
     font-weight: 500;
+    text-overflow: ellipsis;
 }
 
 hr {
@@ -70,46 +71,6 @@ textarea {
   padding-top: 16px;
 }
 
-button {
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  height: 36px;
-  width: 36px;
-  text-align: center;
-  color: black;
-  padding: 4px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-style: solid;
-  border-color: black;
-  border-width: 2.5px;
-  background: transparent;
-  color: black;
-  font-family: 'Open Sans';
-  font-size: 16px;
-  font-weight: 500;
-}
-
 button:hover {
   background-color: darkviolet;
-}
-
-.appbar {
-  padding-left: 0px;
-  width: 100%;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  background-color: #DDDDDD;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  scale: 0.5;
 }

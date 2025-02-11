@@ -12,14 +12,15 @@ function showNotes(){
     }
     for(let i=0; i<notes.length; i++){
         notesHTML += `<div class="note" data-index="${i}">
+                    <img src="svg/file.svg"/>
                     <button class="deleteNote" id=${i} onclick="deleteNote(${i})">Delete</button>
-                    <span class="title"><p style="font-size: 32px;">${notes[i].title === "" ? 'Note' : notes[i].title}</p></span>
+                    <span class="title"><p style="font-size: 38px;">${notes[i].title === "" ? 'Note' : notes[i].title}</p></span>
                 </div>
         `;
     }
     notesDiv.innerHTML = notesHTML;
 
-    const noteElements = document.querySelectorAll('.note');
+    const noteElements = document.querySelectorAll('.title');
     noteElements.forEach(noteElement => {
         noteElement.addEventListener('click', openEditor);
     });

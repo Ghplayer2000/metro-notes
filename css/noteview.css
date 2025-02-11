@@ -48,10 +48,20 @@ body {
     flex-wrap: wrap;
 }
 .note{
-    width: 300px;
+    width: 100vw;
     font-weight: 350;
-    overflow-wrap: break-word;
     background: transparent;
+    overflow: hidden;
+    line-height: 38px;
+}
+
+.note > span {
+  display: flex;
+}
+
+.note > img {
+  float: left;
+  height: 38px;
 }
 
 .deleteNote{
