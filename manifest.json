@@ -1,6 +1,8 @@
 {
   "name": "Metro Notes",
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "short_name": "Notes"
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "short_name": "Notes",
+  "start_url": "https://ghplayer2000.github.io/metro-notes/"
+"
 }
