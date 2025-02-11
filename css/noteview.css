@@ -1,0 +1,60 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(../ttf/OpenSans.ttf);
+}
+
+.top {
+  position: sticky;
+  margin-top: 16px;
+}
+
+h5, h1, h2, .link {
+  padding: 0px;
+  font-weight: 350;
+}
+
+h2, a, h5, h1 {
+  padding-left: 16px;
+}
+
+h5, h1 {
+  margin: 0px;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 0px;
+}
+
+h1 {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+body {
+  font-family: OpenSans;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#notes{
+    display: flex;
+    padding: 16px;
+    flex-wrap: wrap;
+}
+.note{
+    width: 300px;
+    font-weight: 350;
+    overflow-wrap: break-word;
+    background: transparent;
+}
+
+.deleteNote{
+    float: right;
+}
+

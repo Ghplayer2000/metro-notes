@@ -1,0 +1,115 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(../ttf/OpenSans.ttf);
+}
+
+body {
+  font-family: OpenSans;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+
+.header-title {
+    align-items: center;
+    padding: 0px;
+    padding-top: 16px;
+    padding-left: 16px;
+    background-color: white;
+    text-align: left;
+    color: blueviolet;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+hr {
+  border: 1px solid darkgray;
+}
+
+#input-box{
+    padding: 16px;
+    padding-top: 0px;
+}
+
+#input-box > p {
+  color: darkgray;
+}
+
+::placeholder {
+  color: darkgray;
+}
+
+#addTitle, #editorTitle {
+    font-weight: 350;
+    font-size: 38px;
+    padding-top: 8px;
+}
+
+input, textarea{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 0px;
+    color: black;
+    font-size: 16px;
+    font-family: OpenSans, regular;
+}
+
+textarea {
+  height: 100vw;
+  padding-top: 16px;
+}
+
+button {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  text-align: center;
+  color: black;
+  padding: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2.5px;
+  background: transparent;
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: darkviolet;
+}
+
+.appbar {
+  padding-left: 0px;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #DDDDDD;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  scale: 0.5;
+}
