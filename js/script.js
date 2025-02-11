@@ -34,6 +34,7 @@ function addNotes() {
     }
 
     localStorage.setItem('notes', JSON.stringify(notes));
+    alert('Note saved! Reload the notes page to show it.');
 }
 
 addNoteButton.addEventListener('click', addNotes);
