@@ -3,6 +3,9 @@
   src: url(../ttf/OpenSans.ttf);
 }
 
+/* @keyframes moveToLeft {
+    to { transform: translateX(-800px) } } */
+
 .top {
   position: sticky;
   margin-top: 16px;
@@ -35,6 +38,7 @@ h1 {
 body {
   font-family: OpenSans;
 }
+  
 
 *{
     margin: 0;
@@ -67,4 +71,9 @@ body {
 .deleteNote{
     float: right;
 }
+  
+ /* .notesc {
+    animation-name: moveToLeft;
+    animation-duration: 1s;
+  } */
 

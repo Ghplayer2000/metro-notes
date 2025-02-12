@@ -1,0 +1,10 @@
+{
+  "minSdkVersion": 21.0,
+  "viewBindingEnabled": false,
+  "libraries": "[{\"declaration\":\"com.android.support:support-annotations:22.2.0\",\"sourceFile\":\"/storage/emulated/0/Android/data/com.tyron.code/files/cache/google-maven/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar\"},{\"declaration\":\"com.android.support:support-v4:22.2.0\",\"sourceFile\":\"/storage/emulated/0/Android/data/com.tyron.code/files/cache/google-maven/com/android/support/support-v4/22.2.0/support-v4-22.2.0.aar\"},{\"declaration\":\"com.android.support:appcompat-v7:22.2.0\",\"sourceFile\":\"/storage/emulated/0/Android/data/com.tyron.code/files/cache/google-maven/com/android/support/appcompat-v7/22.2.0/appcompat-v7-22.2.0.aar\"}]",
+  "useR8": false,
+  "targetSdkVersion": 30.0,
+  "versionName": "1.0",
+  "versionCode": 1.0,
+  "zipAlignEnabled": false
+}

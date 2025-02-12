@@ -1,0 +1,9 @@
+[
+  {
+    "artifactId": "appcompat-v7",
+    "excludes": [],
+    "groupId": "com.android.support",
+    "scope": "compile",
+    "versionName": "22.2.0"
+  }
+]

@@ -2,6 +2,9 @@ const addTitle = document.getElementById('addTitle');
 const addText = document.getElementById('addText');
 const addNoteButton = document.getElementById('addNote');
 const notesDiv = document.getElementById('notes');
+const time = document.getElementById('time');
+
+time.innerHTML = new Date().toLocaleString();
 
 function addNotes() {
     let notes = localStorage.getItem('notes');
@@ -12,7 +15,7 @@ function addNotes() {
     }
 
     if (addText.value === '') {
-        alert('Add your note');
+        alert('Note text cannot be empty :)');
         return;
     }
 
@@ -23,6 +26,7 @@ function addNotes() {
     const noteObj = {
         title: noteTitle,
         text: addText.value,
+        timestamp: new Date().toLocaleString() // Adiciona o timestamp
     };
 
     if (existingNoteIndex !== -1) {
@@ -38,4 +42,4 @@ function addNotes() {
     
 }
 
-addNoteButton.addEventListener('click', addNotes);
+addNoteButton.addEventListener('click', addNotes); 
