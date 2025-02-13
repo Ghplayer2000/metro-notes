@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/appbar.css">
     <link rel="stylesheet" href="css/button.css">
@@ -11,14 +11,14 @@
 </head>
 <body>
         <header class="header-title">
-        <p>< QUICK NOTES</p>
+        <p class="d" style="opacity: 0">< QUICK NOTES</p>
     </header>
-    <div class="container">
+    <div class="right" id="a">
         <div id="input-box">
            <input type="text" id="editorTitle" placeholder="Enter title">
             <hr/>
             <p id="editorTime"></p>
-            <textarea name="" id="editorContent" cols="30" rows="10"></textarea>
+            <textarea name="" id="editorContent" cols="30" rows="100"></textarea>
         </div>
     </div>
     <div class="appbar">

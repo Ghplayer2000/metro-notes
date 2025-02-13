@@ -42,4 +42,4 @@ function addNotes() {
     
 }
 
-addNoteButton.addEventListener('click', addNotes); 
+addNoteButton.addEventListener('click', addNotes);

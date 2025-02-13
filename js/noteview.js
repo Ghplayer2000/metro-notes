@@ -1,6 +1,22 @@
 const notesDiv = document.getElementById('notes');
+const title = document.getElementById('title');
+const name = document.getElementById('name');
 
 showNotes();
+
+if (history.length > 1) {
+  notesDiv.classList.add('from');
+  title.classList.add('from');
+  name.classList.add('from');
+  name.classList.add('d');
+  window.setTimeout(() => {
+        notesDiv.classList.remove('from');
+        title.classList.remove('from');
+        name.classList.remove('from');
+        name.classList.remove('d');
+    }, 600);
+}
+
 
 function showNotes(){
     let notesHTML = '';
@@ -40,5 +56,12 @@ function deleteNote(ind){
 
 function openEditor(event) {
     const noteIndex = event.target.closest('.note').dataset.index;
-    window.location.href = `editor.html?index=${noteIndex}`, '_blank';
+    notesDiv.classList.add('to');
+    title.classList.add('to');
+    name.classList.add('to');
+    name.classList.add('d');
+  
+    window.setTimeout(() => {
+        window.location.href = `editor.html?index=${noteIndex}`, '_blank';
+    }, 500);
 }

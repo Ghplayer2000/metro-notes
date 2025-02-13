@@ -19,4 +19,3 @@ function saveNote() {
     localStorage.setItem('notes', JSON.stringify(notes));
     window.location.href = 'index.html';
 }
-

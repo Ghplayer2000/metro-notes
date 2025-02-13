@@ -3,8 +3,17 @@
   src: url(../ttf/OpenSans.ttf);
 }
 
-/* @keyframes moveToLeft {
-    to { transform: translateX(-800px) } } */
+@keyframes moveToLeft {
+    to { transform: translateX(-500px) } }
+
+@keyframes moveFromLeft {
+    from { transform: translateX(-500px) } }
+
+@keyframes zoomOut {
+    to {
+        transform: translateX(350%) translateY(5000%);
+    }
+}
 
 .top {
   position: sticky;
@@ -55,8 +64,14 @@ body {
     width: 100vw;
     font-weight: 350;
     background: transparent;
-    overflow: hidden;
     line-height: 38px;
+}
+
+.title {
+  animation-name: zoomOut;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused;
 }
 
 .note > span {
@@ -72,8 +87,18 @@ body {
     float: right;
 }
   
- /* .notesc {
+.to {
     animation-name: moveToLeft;
-    animation-duration: 1s;
-  } */
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(1,0,0,1);
+}
 
+.from {
+  animation-name: moveFromLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1,0,0,1);
+}
+
+.d {
+    animation-delay: 0.1s;
+}

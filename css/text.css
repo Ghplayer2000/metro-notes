@@ -1,0 +1,37 @@
+a {
+  display: block;
+  font-family: OpenSans;
+}
+
+.link {
+  color: blueviolet;
+  display: inline;
+}
+
+.linkparent {
+  display: inline;
+}
+
+h5, h1, h2, .link {
+  padding: 0px;
+  font-weight: 350;
+}
+
+h2, a, h5, h1 {
+  padding-left: 16px;
+}
+
+h5, h1 {
+  margin: 0px;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 0px;
+}
+
+h1 {
+  font-size: 56px;
+  margin-bottom: 16px;
+}

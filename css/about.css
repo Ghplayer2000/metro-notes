@@ -1,0 +1,15 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(../ttf/OpenSans.ttf);
+}
+
+body {
+  margin: 0px;
+  font-family: OpenSans;
+  font-weight: 400;
+}
+
+h5 {
+  margin-top: 16px;
+  font-weight: 500;
+}
