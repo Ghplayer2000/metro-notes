@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="quill/dist/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/appbar.css">
     <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/quill.css">
     <title>Metro Notes</title>
 </head>
 <body>
-        <header class="header-title">
+    <header class="header-title">
         <p class="d" style="opacity: 0">< QUICK NOTES</p>
     </header>
     <div class="right" id="a">
@@ -18,13 +20,13 @@
            <input type="text" id="editorTitle" placeholder="Enter title">
             <hr/>
             <p id="editorTime"></p>
-            <textarea name="" id="editorContent" cols="30" rows="100"></textarea>
-        </div>
+            <div id="editorContent"></div> </div>
     </div>
     <div class="appbar">
-        <button onclick="saveNote()"><img src="svg/save.svg"</button>
+        <button id="saveButton"><img src="svg/save.svg"</button>
     </div>
 
-    <script src="js/edit.js"></script>
+    <script src="quill/dist/quill.js"></script>
+    <script src="js/edit.js" defer></script>
 </body>
 </html>

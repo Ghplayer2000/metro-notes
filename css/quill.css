@@ -1,0 +1,27 @@
+@font-face {
+  font-family: OpenSans;
+  src: url(../ttf/OpenSans.ttf);
+}
+
+.ql-editor {
+  font-family: OpenSans;
+  font-size: 16px;
+  padding: 0px;
+}
+
+.ql-container {
+  border: none !important;
+  height: 100vh;
+}
+
+.ql-toolbar {
+  border: none !important;
+  padding: 0px !important;
+}
+
+.ql-toolbar .ql-formats button {
+  margin: 0px !important;
+  margin-bottom: 4px !important;
+  margin-left: 0px !important;
+  margin-top: 4px !important;
+}

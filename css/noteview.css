@@ -4,15 +4,27 @@
 }
 
 @keyframes moveToLeft {
-    to { transform: translateX(-500px) } }
+  to { transform: translateX(-500px); }
+}
 
 @keyframes moveFromLeft {
-    from { transform: translateX(-500px) } }
+  from { transform: translateX(-500px); }
+}
 
 @keyframes zoomOut {
-    to {
-        transform: translateX(350%) translateY(5000%);
-    }
+  to { transform: translateX(1000%) scale(10); }
+}
+
+@keyframes fadeIn {
+  from { transform: translateX(-500px); }
+  35% { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOutAndMove {
+  from { opacity: 1; }
+  65% { opacity: 0; }
+  to { opacity: 0; transform: translateX(-500px); }
 }
 
 .top {
@@ -21,7 +33,7 @@
 }
 
 h5, h1, h2, .link {
-  padding: 0px;
+  padding: 0;
   font-weight: 350;
 }
 
@@ -30,13 +42,13 @@ h2, a, h5, h1 {
 }
 
 h5, h1 {
-  margin: 0px;
+  margin: 0;
 }
 
 h5 {
   font-weight: 500;
   font-size: 16px;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 h1 {
@@ -47,31 +59,32 @@ h1 {
 body {
   font-family: OpenSans;
 }
-  
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#notes{
-    display: flex;
-    padding: 16px;
-    flex-wrap: wrap;
-}
-.note{
-    width: 100vw;
-    font-weight: 350;
-    background: transparent;
-    line-height: 38px;
+#notesContainer {
+  display: flex;
+  padding: 16px;
+  flex-wrap: wrap;
 }
 
-.title {
+.note {
+  width: 100vw;
+  font-weight: 350;
+  background: transparent;
+  line-height: 38px;
+  padding: 8px;
+  padding-left: 0;
+}
+
+.titleAnimation {
   animation-name: zoomOut;
   animation-duration: 0.3s;
-  animation-timing-function: ease-in-out;
-  animation-play-state: paused;
+  animation-timing-function: cubic-bezier(1, 0, 0, 0);
 }
 
 .note > span {
@@ -83,22 +96,121 @@ body {
   height: 38px;
 }
 
-.deleteNote{
-    float: right;
-}
-  
-.to {
-    animation-name: moveToLeft;
-    animation-duration: 0.5s;
-    animation-timing-function: cubic-bezier(1,0,0,1);
+.deleteNote {
+  float: right;
 }
 
-.from {
-  animation-name: moveFromLeft;
+.moveToLeft {
+  animation-name: moveToLeft;
   animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(1,0,0,1);
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
-.d {
-    animation-delay: 0.1s;
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.fadeInDelayed {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+.fadeOutAndMove {
+  animation-name: fadeOutAndMove;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-delay: 0.1s;
+}
+
+.fadeOut {
+  animation-name: fadeOutAndMove;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+
+@keyframes popup {
+  from {
+    transform: scaleY(0.03);
+    width: 0;
+  }
+  25% {
+    width: 100%;
+    transform: scaleY(0.03);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes dimBackground {
+  to {
+    transform: scale(0.95);
+    opacity: 0.25;
+  }
+}
+
+@keyframes restoreBackground {
+  from {
+    transform: scale(0.95);
+    opacity: 0.25;
+  }
+}
+
+#popup {
+  overflow: hidden;
+  position: absolute;
+  background-color: black;
+  padding: 10px;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+  transform-origin: top;
+}
+
+#popup.active {
+  opacity: 1;
+  animation-name: popup;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+#overlay {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.dimmed:not(.selected) {
+  animation-name: dimBackground;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.dimmedRestore:not(.selected) {
+  animation-name: restoreBackground;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+#popup a {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  display: block;
+  text-align: left;
+  padding: 4px;
+  line-height: 24px;
+  text-decoration: none;
 }

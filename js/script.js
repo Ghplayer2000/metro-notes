@@ -1,45 +1,55 @@
-const addTitle = document.getElementById('addTitle');
-const addText = document.getElementById('addText');
-const addNoteButton = document.getElementById('addNote');
-const notesDiv = document.getElementById('notes');
-const time = document.getElementById('time');
+document.addEventListener('DOMContentLoaded', function() {  // Importante!
+    const addTitle = document.getElementById('addTitle');
+    const addText = document.getElementById('addText');
+    const addNoteButton = document.getElementById('addNote');
+    const time = document.getElementById('time');
 
-time.innerHTML = new Date().toLocaleString();
+    time.innerHTML = new Date().toLocaleString();
 
-function addNotes() {
-    let notes = localStorage.getItem('notes');
-    if (notes === null) {
-        notes = [];
-    } else {
-        notes = JSON.parse(notes);
+    const quill = new Quill('#addText', { // Inicializa o Quill *aqui*
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                ['bold', 'italic', 'underline', 'image'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }]
+            ]
+        }
+    });
+
+    function addNotes() {
+        let notes = localStorage.getItem('notes');
+        if (notes === null) {
+            notes = [];
+        } else {
+            notes = JSON.parse(notes);
+        }
+
+        const noteText = quill.root.innerHTML;
+
+        if (noteText === '<p><br></p>') {
+            alert('Note text cannot be empty :)');
+            return;
+        }
+
+        const noteTitle = addTitle.value;
+
+        const existingNoteIndex = notes.findIndex(note => note.title === noteTitle);
+
+        const noteObj = {
+            title: noteTitle,
+            text: noteText,
+            timestamp: new Date().toLocaleString()
+        };
+
+        if (existingNoteIndex !== -1) {
+            notes[existingNoteIndex] = noteObj;
+        } else {
+            notes.push(noteObj);
+        }
+
+        localStorage.setItem('notes', JSON.stringify(notes));
+        window.location.href = 'index.html';
     }
 
-    if (addText.value === '') {
-        alert('Note text cannot be empty :)');
-        return;
-    }
-
-    const noteTitle = addTitle.value;
-    
-    const existingNoteIndex = notes.findIndex(note => note.title === noteTitle);
-
-    const noteObj = {
-        title: noteTitle,
-        text: addText.value,
-        timestamp: new Date().toLocaleString() // Adiciona o timestamp
-    };
-
-    if (existingNoteIndex !== -1) {
-        
-        notes[existingNoteIndex] = noteObj;
-    } else {
-        
-        notes.push(noteObj);
-    }
-
-    localStorage.setItem('notes', JSON.stringify(notes));
-    window.location.href = 'index.html';
-    
-}
-
-addNoteButton.addEventListener('click', addNotes);
+    addNoteButton.addEventListener('click', addNotes);
+}); // Fim do DOMContentLoaded

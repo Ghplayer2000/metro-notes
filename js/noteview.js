@@ -1,66 +1,134 @@
-const notesDiv = document.getElementById('notes');
-const title = document.getElementById('title');
-const name = document.getElementById('name');
+const popup = document.getElementById('popup');
+const overlay = document.getElementById('overlay');
+const deleteLink = document.getElementById('deleteLink');
+const topHeader = document.getElementById('top');
+const newNoteButton = document.getElementById('newNoteButton');
+const aboutButton = document.getElementById('aboutButton');
+const notesContainer = document.getElementById('notesContainer');
+const pageTitle = document.getElementById('pageTitle');
+const appName = document.getElementById('appName');
+
+let selectedNote;
+let timer;
 
 showNotes();
 
-if (history.length > 1) {
-  notesDiv.classList.add('from');
-  title.classList.add('from');
-  name.classList.add('from');
-  name.classList.add('d');
-  window.setTimeout(() => {
-        notesDiv.classList.remove('from');
-        title.classList.remove('from');
-        name.classList.remove('from');
-        name.classList.remove('d');
-    }, 600);
-}
+window.setTimeout(() => {
+    notesContainer.classList.remove('moveFromLeft');
+    pageTitle.classList.remove('moveFromLeft');
+    appName.classList.remove('moveFromLeft');
+}, 600);
 
-
-function showNotes(){
+function showNotes() {
     let notesHTML = '';
     let notes = localStorage.getItem('notes');
-    if(notes === null){
+    if (notes === null) {
         return;
-    }else{
+    } else {
         notes = JSON.parse(notes);
     }
-    for(let i=0; i<notes.length; i++){
+    for (let i = 0; i < notes.length; i++) {
         notesHTML += `<div class="note" data-index="${i}">
-                    <img src="svg/file.svg"/>
-                    <button class="deleteNote" id=${i} onclick="deleteNote(${i})">Delete</button>
-                    <span class="title"><p style="font-size: 38px;">${notes[i].title === "" ? 'Note' : notes[i].title}</p></span>
+                    <img src="svg/file.svg" alt="Note Icon"/>
+                    <span><p style="font-size: 38px;">${notes[i].title === "" ? 'Note' : notes[i].title}</p></span>
                 </div>
         `;
     }
-    notesDiv.innerHTML = notesHTML;
+    notesContainer.innerHTML = notesHTML;
 
-    const noteElements = document.querySelectorAll('.title');
+    const noteElements = document.querySelectorAll('.note');
     noteElements.forEach(noteElement => {
         noteElement.addEventListener('click', openEditor);
+
+        noteElement.addEventListener('touchstart', (event) => {
+            event.preventDefault();
+            timer = setTimeout(() => {
+                selectedNote = event.target.closest('.note');
+                selectedNote.classList.add('selected');
+                showPopup(selectedNote);
+            }, 500);
+        });
+
+        noteElement.addEventListener('touchend', (event) => {
+            clearTimeout(timer);
+            if (!popup.classList.contains('active')) {
+                openEditor(event);
+            }
+        });
     });
 }
 
-function deleteNote(ind){
+deleteLink.addEventListener('click', () => {
+    if (selectedNote) {
+        deleteNote(selectedNote.dataset.index);
+        hidePopup();
+    }
+});
+
+overlay.addEventListener('click', hidePopup);
+
+function showPopup(note) {
+    const rect = note.getBoundingClientRect();
+    popup.style.top = rect.bottom + 'px';
+    popup.style.display = 'block';
+    popup.classList.add('active');
+    overlay.classList.add('active');
+
+    const dimmedElements = document.querySelectorAll('.note:not(.selected), #top');
+    dimmedElements.forEach(element => {
+        element.classList.remove('dimmedRestore');
+        element.classList.add('dimmed');
+    });
+
+    topHeader.classList.add('dimmed');
+    newNoteButton.classList.add('dimmed');
+    aboutButton.classList.add('dimmed');
+
+    overlay.style.pointerEvents = 'auto';
+}
+
+function hidePopup() {
+    popup.style.display = 'none';
+    popup.classList.remove('active');
+    overlay.classList.remove('active');
+    overlay.style.pointerEvents = 'none';
+
+    if (selectedNote) {
+        selectedNote.classList.remove('selected');
+        selectedNote = null;
+    }
+
+    const dimmedElements = document.querySelectorAll('.note:not(.selected), #top, #newNoteButton, #aboutButton');
+    dimmedElements.forEach(element => {
+        element.classList.remove('dimmed');
+        element.classList.add('dimmedRestore');
+    });
+}
+
+function deleteNote(index) {
     let notes = localStorage.getItem('notes');
-    if(notes === null){
+    if (notes === null) {
         return;
-    }else{
+    } else {
         notes = JSON.parse(notes);
     }
-    notes.splice(ind, 1);
+    notes.splice(index, 1);
     localStorage.setItem('notes', JSON.stringify(notes));
     showNotes();
 }
 
 function openEditor(event) {
     const noteIndex = event.target.closest('.note').dataset.index;
-    notesDiv.classList.add('to');
-    title.classList.add('to');
-    name.classList.add('to');
-    name.classList.add('d');
-  
+    notesContainer.classList.add('moveToLeft');
+    pageTitle.classList.add('moveToLeft');
+    appName.classList.remove('fadeIn');
+    appName.style.opacity = 1;
+    appName.classList.add('fadeOutAndMove');
+    pageTitle.classList.add('fadeOut');
+    notesContainer.classList.add('fadeOut');
+    event.target.closest('.note').classList.remove('dimmedRestore');
+    event.target.closest('.note').classList.add('titleAnimation');
+
     window.setTimeout(() => {
         window.location.href = `editor.html?index=${noteIndex}`, '_blank';
     }, 500);

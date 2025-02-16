@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Metro Notes</title>
   <link rel="stylesheet" href="css/noteview.css">
   <link rel="stylesheet" href="css/appbar.css">
   <link rel="stylesheet" href="css/button.css">
-  <title>Metro Notes</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="top">
-    <h5 id="name">METRO NOTES</h5>
-    <h1 id="title">Quick Notes</h1>
+  <div id="overlay"></div>
+  <div id="popup">
+    <a id="deleteLink">Delete</a>
+  </div>
+  <header class="top" id="top">
+    <h5 id="appName" class="d">METRO NOTES</h5>
+    <h1 id="pageTitle" class="dx">Quick Notes</h1>
   </header>
-    <div id="notes">
-    </div>
-  <div class="appbar">
-  <button onclick="window.location.href = 'new.html'"><img src="svg/new.svg"></img></button>
-  <button onclick="window.location.href = 'about.html'"><img src="svg/info.svg"></img></button>
-  </div> 
-    <script src="js/noteview.js"></script>
+  <div id="notesContainer" class="dx">
+  </div>
+  <div class="appbar appbaranim">
+    <button id="newNoteButton" class="abutton" onclick="window.location.href = 'new.html'"><img src="svg/new.svg" alt="New Note"></button>
+    <button id="aboutButton" class="abutton" onclick="window.location.href = 'about.html'"><img src="svg/info.svg" alt="About"></button>
+    <button id="darkmodebutton class="abutton" onclick="window.location.href = 'new.html'"><img src="svg/new.svg" alt="Dark Mode"></button>
+  </div>
+  <script src="js/noteview.js"></script>
 </body>
 </html>

@@ -13,3 +13,11 @@ h5 {
   margin-top: 16px;
   font-weight: 500;
 }
+
+#mes {
+  opacity: 0.25;
+  font-size: 24px;
+  font-style: italic;
+  margin-right: 8px;
+  font-weight: 350;
+}
