@@ -1,0 +1,12 @@
+.darktheme {
+  background-color: black;
+  color: white;
+}
+
+.dthemeabar {
+  background-color: #1F1F1F;
+}
+
+.dthemeabutton {
+  filter:  invert(100%) hue-rotate(180deg);
+}
