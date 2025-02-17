@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" width="64" alt="Metro Notes Logo">
+  <img src="readme/logo.png" width="64" alt="Metro Notes Logo">
   <h1>Metro Notes</h1>
   <p>A metro-themed notes app inspired by OneNote for Windows Phone 8</p>
   <a href="https://github.com/ghplayer2000/metro-notes/releases">
@@ -9,7 +9,7 @@
 
 ## About
 
-Metro Notes is a simple and elegant notes application inspired by the classic OneNote design from Windows Phone 8.  It offers a clean, distraction-free environment for capturing your thoughts, ideas, and to-dos.
+**Metro Notes** is a simple and elegant notes application inspired by the classic OneNote design from Windows Phone 8.  It offers a clean, distraction-free environment for capturing your thoughts, ideas, and to-dos.
 
 ## Features
 
@@ -22,15 +22,22 @@ Metro Notes is a simple and elegant notes application inspired by the classic On
 *   **Search (Coming Soon):**  A search feature is planned for future releases.
 
 ## Screenshots
+<table>
+    <tr>
+        <td><img src="readme/shot1.png"></td>
+        <td><img src="readme/shot2.png"></td>
+        <td><img src="readme/shot3.png"></td>
+    </tr>
+</table>
 
 ## Download
 
-*  **[Github Releases](https://github.com/ghplayer2000/metro-notes/releases)**
-*  **[Web Demo](https://ghplayer2000.github.io/metro-notes)**
+*  [Github Releases](https://github.com/ghplayer2000/metro-notes/releases)
+*  [Web Demo](https://ghplayer2000.github.io/metro-notes)
 
 ## Building from Source
 
-If you'd like to build Metro Notes yourself:
+If you'd like to build **Metro Notes** yourself:
 
 1.  Clone the Repository:
     ```bash
