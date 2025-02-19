@@ -94,6 +94,7 @@ body {
 .note > img {
   float: left;
   height: 38px;
+  padding-right: 16px;
 }
 
 .deleteNote {
@@ -133,6 +134,18 @@ body {
   animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
+.dx {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.d {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-delay: 0.1s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
 
 @keyframes popup {
   from {
@@ -171,13 +184,14 @@ body {
   z-index: 2;
   opacity: 0;
   transform-origin: top;
+  color: white;
 }
 
 #popup.active {
   opacity: 1;
   animation-name: popup;
   animation-duration: 1s;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
 }
 
 #overlay {
@@ -195,7 +209,7 @@ body {
   animation-name: dimBackground;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+  animation-timing-function: cubic-bezier(0, 0, 0, 1);
 }
 
 .dimmedRestore:not(.selected) {
@@ -205,7 +219,6 @@ body {
 }
 
 #popup a {
-  color: white;
   font-size: 24px;
   font-weight: 300;
   display: block;

@@ -16,15 +16,17 @@
 		<a id="deleteLink">Delete</a>
 	</div>
 	<header class="top" id="top">
-		<h5 id="appName" class="d">METRO NOTES</h5>
+		<h5 id="appName" class="d" style="opacity: 0">METRO NOTES</h5>
+		<!-- <h5 id="appmes" style="display: none">RESTART APP TO FULLY APPLY THEME</h5> -->
 		<h1 id="pageTitle" class="dx">Quick Notes</h1>
+		<a style="display: none" id="message"></a>
 	</header>
 	<div id="notesContainer" class="dx">
 	</div>
 	<div class="appbar appbaranim" id="appbar">
-		<button id="newNoteButton" class="abutton" onclick="window.location.href = 'new.html'"><img src="svg/new.svg" alt="New Note"></button>
-		<button id="aboutButton" class="abutton" onclick="window.location.href = 'about.html'"><img src="svg/info.svg" alt="About"></button>
-		<button id="darkbtn" class="abutton" onclick="darkMode()"><img src="svg/sun.svg" alt="Dark Mode"></button>
+		<button id="newNoteButton" class="abutton" onclick="openNew()"><img src="svg/new.svg" alt="New Note"></button>
+		<button id="aboutButton" class="abutton" onclick="openAbout()"><img src="svg/info.svg" alt="About"></button>
+		<button id="darkbtn" class="abutton" onclick="darkMode()"><img src="svg/moon.svg" id="dark" alt="Dark Mode"></button>
 	</div>
 	<script src="js/noteview.js"></script>
 </body>

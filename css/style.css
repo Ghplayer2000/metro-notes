@@ -56,7 +56,6 @@ body {
 .container, .right {
     height: 100%;
     width: 100vw;
-    background-color: white;
 }
 
 .header-title {
@@ -64,7 +63,6 @@ body {
     padding: 0px;
     padding-top: 16px;
     padding-left: 16px;
-    background-color: white;
     text-align: left;
     color: #AF52DE;
     font-size: 16px;
@@ -73,7 +71,8 @@ body {
 }
 
 hr {
-  border: 1px solid darkgray;
+  border: 1px solid;
+  opacity: 0.5;
 }
 
 #input-box{
@@ -83,11 +82,10 @@ hr {
 }
 
 #input-box > p {
-  color: darkgray;
+  opacity: 0.5;
 }
 
 ::placeholder {
-  color: darkgray;
 }
 
 #addTitle, #editorTitle {
@@ -114,4 +112,8 @@ textarea {
 
 button:hover {
   background-color: darkviolet;
+}
+
+h5 {
+	padding-left: 0px !important;
 }

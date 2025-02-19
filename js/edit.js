@@ -37,3 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     saveButton.addEventListener('click', saveNote);
 }); // Fim do DOMContentLoaded
+
+const theme = localStorage.getItem('theme');
+
+document.addEventListener('DOMContentLoaded', function() {
+if (theme === 'dark') {
+	document.body.classList.add('darktheme');
+	// document.getElementById('container').classList.add('darktheme');
+	document.getElementById('appbar').classList.add('dthemeabar');
+	document.getElementById('editorTitle').style = "color: white";
+	document.getElementById('saveButton').classList.add('dthemeabutton');
+	document.querySelector('.ql-toolbar').classList.add('dql-toolbar');
+	document.querySelector('.ql-editor').classList.add('dql-editor');
+	document.querySelector('.ql-container').classList.add('dql-container');
+}
+});

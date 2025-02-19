@@ -31,6 +31,17 @@ h5 {
   padding-top: 0px;
 }
 
+h5 > a:link {
+	padding-left: 0px !important;
+	text-decoration: none;
+	font-weight: 400;
+	color: #A25FDE;
+}
+
+a:visited {
+	color: #A25FDE;
+}
+
 h1 {
   font-size: 56px;
   margin-bottom: 16px;

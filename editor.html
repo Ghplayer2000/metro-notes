@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="css/appbar.css">
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/quill.css">
+    <link rel="stylesheet" href="css/darktheme.css">
+    <link rel="stylesheet" href="css/text.css">
     <title>Metro Notes</title>
 </head>
 <body>
     <header class="header-title">
-        <p class="d" style="opacity: 0">< QUICK NOTES</p>
+		<h5 class="d" style="color: #AF52DE; opacity: 0;"><a href="index.html">< QUICK NOTES</a></h5>
     </header>
     <div class="right" id="a">
         <div id="input-box">
@@ -22,8 +24,8 @@
             <p id="editorTime"></p>
             <div id="editorContent"></div> </div>
     </div>
-    <div class="appbar">
-        <button id="saveButton"><img src="svg/save.svg"</button>
+    <div class="appbar appbaranim" id="appbar">
+        <button class="abutton" id="saveButton"><img src="svg/save.svg"</button>
     </div>
 
     <script src="quill/dist/quill.js"></script>

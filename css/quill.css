@@ -17,6 +17,7 @@
 .ql-toolbar {
   border: none !important;
   padding: 0px !important;
+  filter: hue-rotate(70deg);
 }
 
 .ql-toolbar .ql-formats button {

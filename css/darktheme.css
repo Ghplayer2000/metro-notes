@@ -10,3 +10,20 @@
 .dthemeabutton {
   filter:  invert(100%) hue-rotate(180deg);
 }
+
+.dql-editor {
+  background-color: black;
+}
+
+.dql-container {
+  background-color: black;
+}
+
+.dql-toolbar {
+  filter: invert(1) hue-rotate(240deg);
+}
+
+.dpopup {
+	background-color: white !important;
+	color: black !important;
+}

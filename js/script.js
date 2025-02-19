@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {  // Importante!
+document.addEventListener('DOMContentLoaded', function() {
     const addTitle = document.getElementById('addTitle');
     const addText = document.getElementById('addText');
     const addNoteButton = document.getElementById('addNote');
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {  // Importante!
 
     time.innerHTML = new Date().toLocaleString();
 
-    const quill = new Quill('#addText', { // Inicializa o Quill *aqui*
+    const quill = new Quill('#addText', {
         theme: 'snow',
         modules: {
             toolbar: [
@@ -52,4 +52,16 @@ document.addEventListener('DOMContentLoaded', function() {  // Importante!
     }
 
     addNoteButton.addEventListener('click', addNotes);
-}); // Fim do DOMContentLoaded
+    
+    const theme = localStorage.getItem('theme');
+    
+    if (theme === 'dark') {
+	document.body.classList.add('darktheme');
+	document.getElementById('container').classList.add('darktheme');
+	document.getElementById('appbar').classList.add('dthemeabar');
+	document.getElementById('addNote').classList.add('dthemeabutton');
+	document.querySelector('.ql-toolbar').classList.add('dql-toolbar');
+	document.querySelector('.ql-editor').classList.add('dql-editor');
+	document.querySelector('.ql-container').classList.add('dql-container');
+}
+});

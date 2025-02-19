@@ -9,6 +9,7 @@ const pageTitle = document.getElementById('pageTitle');
 const appName = document.getElementById('appName');
 const appbar = document.getElementById('appbar');
 const darkbtn = document.getElementById('darkbtn');
+const appmes = document.getElementById('appmes');
 
 let selectedNote;
 let timer;
@@ -16,9 +17,10 @@ let timer;
 showNotes();
 
 window.setTimeout(() => {
-	notesContainer.classList.remove('moveFromLeft');
-	pageTitle.classList.remove('moveFromLeft');
-	appName.classList.remove('moveFromLeft');
+	notesContainer.classList.remove('dx');
+	pageTitle.classList.remove('dx');
+	appName.classList.remove('d');
+	appName.style = "opacity: 1";
 }, 600);
 
 function showNotes() {
@@ -82,9 +84,13 @@ function showPopup(note) {
 		element.classList.add('dimmed');
 	});
 
+	newNoteButton.classList.remove('dimmedRestore');
+	aboutButton.classList.remove('dimmedRestore');
+	darkbtn.classList.remove('dimmedRestore');
 	topHeader.classList.add('dimmed');
 	newNoteButton.classList.add('dimmed');
 	aboutButton.classList.add('dimmed');
+	darkbtn.classList.add('dimmed');
 
 	overlay.style.pointerEvents = 'auto';
 }
@@ -100,7 +106,7 @@ function hidePopup() {
 		selectedNote = null;
 	}
 
-	const dimmedElements = document.querySelectorAll('.note:not(.selected), #top, #newNoteButton, #aboutButton');
+	const dimmedElements = document.querySelectorAll('.note:not(.selected), #top, #newNoteButton, #aboutButton, #darkbtn');
 	dimmedElements.forEach(element => {
 		element.classList.remove('dimmed');
 		element.classList.add('dimmedRestore');
@@ -120,6 +126,10 @@ function deleteNote(index) {
 }
 
 function openEditor(event) {
+	appName.classList.remove('d');
+	pageTitle.classList.remove('dx');
+	notesContainer.classList.remove('dx');
+	
 	const noteIndex = event.target.closest('.note').dataset.index;
 	notesContainer.classList.add('moveToLeft');
 	pageTitle.classList.add('moveToLeft');
@@ -130,13 +140,14 @@ function openEditor(event) {
 	notesContainer.classList.add('fadeOut');
 	event.target.closest('.note').classList.remove('dimmedRestore');
 	event.target.closest('.note').classList.add('titleAnimation');
+	appbar.classList.remove('appbaranim');
+	appbar.classList.add('appbaranim2');
 
 	window.setTimeout(() => {
 		window.location.href = `editor.html?index=${noteIndex}`, '_blank';
 	}, 500);
 }
 
-// *** Código para o tema ***
 let theme = localStorage.getItem('theme') || 'light';
 
 function sendColorToNative(theme) {
@@ -155,7 +166,10 @@ function applyTheme(theme) {
 		newNoteButton.classList.add('dthemeabutton');
 		aboutButton.classList.add('dthemeabutton');
 		darkbtn.classList.add('dthemeabutton');
-		img.classList.add('dthemeabutton');
+		popup.classList.add('dpopup');
+		document.getElementById('dark').src = "svg/sun.svg";
+		if (localStorage.getItem('first') !== false) {
+        window.postMessage('themeChanged', '*'); }
 	} else {
 		document.body.classList.remove('darktheme');
 		mainEls.forEach(el => el.classList.remove('darktheme'));
@@ -163,23 +177,62 @@ function applyTheme(theme) {
 		newNoteButton.classList.remove('dthemeabutton');
 		aboutButton.classList.remove('dthemeabutton');
 		darkbtn.classList.remove('dthemeabutton');
-		img.classList.remove('dthemeabutton');
+		popup.classList.remove('dpopup');
+		document.getElementById('dark').src = "svg/moon.svg";
 	}
 	sendColorToNative(theme);
+	localStorage.setItem('first', false);
 }
-
-// *** REMOVA ESTA LINHA: applyTheme(theme); ***
 
 function darkMode() {
 	theme = theme === 'dark' ? 'light': 'dark';
 	localStorage.setItem('theme', theme);
-	applyTheme(theme); // Chama applyTheme() SOMENTE quando o botão darkMode é clicado
+	applyTheme(theme);
 }
 
-// Restaura o tema *apenas se ele tiver sido salvo*
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
 	applyTheme(savedTheme);
 }
 
-// *** Fim do código para o tema ***
+function openAbout() {
+	appName.classList.remove('d');
+	pageTitle.classList.remove('dx');
+	notesContainer.classList.remove('dx');
+	
+	notesContainer.classList.add('moveToLeft');
+	pageTitle.classList.add('moveToLeft');
+	appName.classList.remove('fadeIn');
+	appName.classList.add('fadeOutAndMove');
+	pageTitle.classList.add('fadeOut');
+	notesContainer.classList.add('fadeOut');
+	appbar.classList.remove('appbaranim');
+	appbar.classList.add('appbaranim2');
+
+	window.setTimeout(() => {
+		window.location.href = `about.html`;
+	}, 500);
+}
+
+function openNew() {
+	appName.classList.remove('d');
+	pageTitle.classList.remove('dx');
+	notesContainer.classList.remove('dx');
+	
+	notesContainer.classList.add('moveToLeft');
+	pageTitle.classList.add('moveToLeft');
+	appName.classList.remove('d');
+	appName.classList.add('fadeOutAndMove');
+	pageTitle.classList.add('fadeOut');
+	notesContainer.classList.add('fadeOut');
+	appbar.classList.remove('appbaranim');
+	appbar.classList.add('appbaranim2');
+
+	window.setTimeout(() => {
+		window.location.href = `new.html`;
+	}, 500);
+}
+
+window.setTimeout(() => {
+	appName.style.opacity = 1;
+}, 500);

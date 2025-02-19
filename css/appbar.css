@@ -28,12 +28,17 @@
 }
 
 .appbar > button > img {
-  scale: 0.5;
+  height: 36px;
 }
 
 @keyframes appbar {
   from { transform: translateY(100px) }
   to { transform: translateY(0px) }
+}
+
+@keyframes appbar2 {
+  from { transform: translateY(0px) }
+  to { transform: translateY(100px) }
 }
 
 @keyframes abutton {
@@ -42,14 +47,31 @@
   to { transform: translateY(0px) }
 }
 
+@keyframes abutton2 {
+  from { transform: translateY(0px) }
+  to { transform: translateY(-5px) }
+}
+
 .appbaranim {
   animation-name: appbar;
   animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(1,0,0,1);
 }
 
+.appbaranim2 {
+  animation-name: appbar2;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(1,0,0,1);
+}
+
 .abutton {
   animation-name: abutton;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+
+.abutton2 {
+  animation-name: abutton2;
   animation-duration: 0.5s;
   animation-timing-function: linear;
 }
