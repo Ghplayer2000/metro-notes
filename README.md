@@ -19,7 +19,6 @@
 *   **Image Support:**  Embed images directly into your notes.
 *   **Smooth Animations:**  Enjoy a fluid and responsive user experience.
 *   **Dark Mode:**  Switch to dark mode for comfortable nighttime use.
-*   **Search (Coming Soon):**  A search feature is planned for future releases.
 
 ## Screenshots
 <table>
@@ -39,12 +38,12 @@
 
 If you'd like to build **Metro Notes** yourself:
 
-1.  Clone the Repository:
+1.  **Clone the Repository:**
     ```bash
     git clone https://github.com/ghplayer2000/metro-notes.git
     ```
 
-2.  Prepare Assets: Copy all files into the `/android/app/src/main/assets/web_content/` directory.
+2.  **Prepare Assets:** Copy all files into the `/android/app/src/main/assets/web_content/` directory.
 
 3.  **Build with Android Studio:** Open the `/android` directory in Android Studio, Build and run the project.
 
