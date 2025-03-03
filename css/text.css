@@ -1,48 +1,60 @@
 a {
-  display: block;
-  font-family: OpenSans;
+    display: block;
+    font-family: OpenSans;
 }
 
 .link {
-  color: blueviolet;
-  display: inline;
+    color: #af52de;
+    display: inline;
 }
 
 .linkparent {
-  display: inline;
+    display: inline;
 }
 
-h5, h1, h2, .link {
-  padding: 0px;
-  font-weight: 350;
+h5,
+h1,
+h2,
+.link {
+    padding: 0px;
+    font-weight: 350;
 }
 
-h2, a, h5, h1 {
-  padding-left: 16px;
+h2,
+a,
+h5,
+h1 {
+    padding-left: 16px;
 }
 
-h5, h1 {
-  margin: 0px;
+h5,
+h1 {
+    margin: 0px;
 }
 
 h5 {
-  font-weight: 400;
-  font-size: 16px;
-  padding-top: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 0px;
 }
 
 h5 > a:link {
-	padding-left: 0px !important;
-	text-decoration: none;
-	font-weight: 400;
-	color: #A25FDE;
+    padding-left: 0px !important;
+    text-decoration: none;
+    font-weight: 400;
+    color: #a25fde;
 }
 
 a:visited {
-	color: #A25FDE;
+    color: #a25fde;
 }
 
 h1 {
-  font-size: 56px;
-  margin-bottom: 16px;
+    font-size: 56px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 32px;
 }

@@ -1,0 +1,84 @@
+.checkbox-square input:checked + label span:before {
+    left: 44px;
+}
+
+.checkbox-square input:checked + label span {
+    background: #AF52DE;
+    /*genera un bordo interno bianco*/
+    box-shadow:
+        inset -3px -3px 0 #fff,
+        inset 3px 3px 0 #fff;
+}
+
+/*
+la checkbox è stata deselezionata
+*/
+
+.checkbox-square label span {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    float: right;
+}
+
+.checkbox-square label span {
+    height: 20px;
+    width: 64px;
+    border: 3px solid #000;
+    top: 17px;
+
+    transition: background 0.1s cubic-bezier(1,0,0,1);
+}
+
+.checkbox-square label span:before {
+    height: 32px;
+    width: 18px;
+    left: -4px;
+    top: -10px;
+    background-color: #000;
+    border: 4px solid #fff;
+
+    transition: left 0.1s cubic-bezier(1,0,0,1);
+}
+
+.d-row {
+    padding: 0px 0px;
+    font-size: 24px;
+    font-weight: 350;
+
+    transition: background 0.3s cubic-bezier(1,0,0,1);
+}
+
+
+.d-row label {
+    position: relative;
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 0 0 15px;
+    user-select: none;
+}
+
+.d-row label:before,
+.d-row label:after,
+.d-row label span:before,
+.d-row label span:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+/*
+Nascondiamo le checkbox
+*/
+input[type="checkbox"] {
+    float: right;
+    visibility: hidden;
+}
+
+.checktext {
+	font-size: 16px;
+	transform: translateY(12px);
+	font-weight: 450;
+	opacity: 0.5;
+}

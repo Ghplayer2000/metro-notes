@@ -1,28 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="css/appbar.css">
-	<link rel="stylesheet" href="css/button.css">
-	<link rel="stylesheet" href="css/text.css">
-	<link rel="stylesheet" href="css/about.css">
-	<link rel="stylesheet" href="css/darktheme.css">
-	<title>Metro Notes</title>
-</head>
-<body>
-	<header class="top">
-		<h5 class="d" style="color: #AF52DE"><a href="index.html">< QUICK NOTES</a></h5>
-		<h1 class="right">Metro Notes</h1>
-	</header>
-	<a class="right">Version: b0.3.0</a>
-	<h2></h2>
-	<section class="right">
-		<a id="mes"></a>
-	</section>
-	<div class="appbar appbaranim" id="appbar">
-		<button class="abutton" id="github" onclick="window.open('https://github.com/Ghplayer2000/metro-notes/')"><img src="svg/github.svg" style="height: 32px; filter: brightness(0);"></img></button>
-	</div>
-	<script src="js/about.js"></script>
-</body>
+    <head>
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <link rel="stylesheet" href="css/appbar.css" />
+        <link rel="stylesheet" href="css/button.css" />
+        <link rel="stylesheet" href="css/text.css" />
+        <link rel="stylesheet" href="css/about.css" />
+        <link rel="stylesheet" href="css/darktheme.css" />
+        <link rel="stylesheet" href="css/switch.css" />
+        <title>Metro Notes</title>
+    </head>
+    <body>
+        <header class="top">
+            <h5 class="d" style="color: #af52de">
+                <a href="index.html">< QUICK NOTES</a>
+            </h5>
+            <h1 class="right">Settings</h1>
+        </header>
+        <h2 class="right">Appearance</h2>
+        <section class="right">
+            <div class="d-row checkbox-square">
+                <a class="checktext">Colored statusbar</a>
+                <input id="checkbox-square-1" type="checkbox" />
+                <label for="checkbox-square-1">Off<span></span></label>
+            </div>
+            <div class="d-row checkbox-square">
+                <a class="checktext">Dark mode</a>
+                <input id="checkbox-square-2" type="checkbox" checked />
+                <label for="checkbox-square-2">On<span></span></label>
+            </div>
+            <div class="d-row checkbox-square">
+                <a class="checktext">Tablet mode</a>
+                <input id="checkbox-square-3" type="checkbox" />
+                <label for="checkbox-square-3">Off<span></span></label>
+            </div>
+        </section>
+        <h2 class="right">Backups</h2>
+        <section class="right">
+            <button>Backup</button>
+            <button>Restore</button>
+        </section>
+        <h2 class="right">About</h2>
+        <section class="right">
+            <a class="right">Version: b0.4.0</a>
+            <a class="right">Developed by ghplayer2000</a>
+            <a id="mes" style="padding-top: 16px"></a>
+        </section>
+        <div class="appbar appbaranim" id="appbar">
+            <button
+                class="abutton"
+                id="github"
+                onclick="window.open('https://github.com/Ghplayer2000/metro-notes/')"
+            >
+                <img
+                    src="svg/github.svg"
+                    style="height: 32px; filter: brightness(0)"
+                />
+            </button>
+        </div>
+        <script src="js/about.js"></script>
+    </body>
 </html>

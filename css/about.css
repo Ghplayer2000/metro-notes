@@ -61,3 +61,8 @@ h5 {
       opacity: 1;
     }
 }
+
+section {
+	padding: 0px;
+	margin: 0px;
+}
