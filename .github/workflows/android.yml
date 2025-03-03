@@ -37,7 +37,7 @@ jobs:
 
     - name: Update Gradle Wrapper
       working-directory: ./android
-      run: ./android/gradlew wrapper --gradle-version 7.3.3
+      run: ./gradlew wrapper --gradle-version 7.3.3
 
     - name: Build with Gradle
       working-directory: ./android
