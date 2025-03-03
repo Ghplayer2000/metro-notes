@@ -16,6 +16,12 @@ jobs:
         distribution: 'zulu'
         java-version: '11'
 
+    - name: Copy web content to Android assets
+      run: |
+        mkdir -p ./android/app/src/main/assets/web_content
+        shopt -s extglob
+        cp -r !(android) ./android/app/src/main/assets/web_content/
+
     - name: Cache Gradle packages
       uses: actions/cache@v4
       with:
@@ -33,8 +39,3 @@ jobs:
       working-directory: ./android
       run: ./gradlew build
 
-    - name: Copy web content to Android assets
-      run: |
-        mkdir -p ./android/app/src/main/assets/web_content
-        shopt -s extglob
-        cp -r !(android) ./android/app/src/main/assets/web_content/
