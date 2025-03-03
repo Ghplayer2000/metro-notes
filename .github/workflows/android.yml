@@ -35,7 +35,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x ./android/gradlew
 
+    - name: Update Gradle Wrapper
+      run: ./android/gradlew wrapper --gradle-version 7.3.3
+
     - name: Build with Gradle
       working-directory: ./android
-      run: ./gradlew build
-
+      run: ./gradlew build --no-daemon
