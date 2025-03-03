@@ -1,9 +1,6 @@
 name: Compile Android
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   build:
@@ -20,7 +17,7 @@ jobs:
         java-version: '11'
 
     - name: Cache Gradle packages
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
