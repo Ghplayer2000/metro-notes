@@ -1,29 +1,47 @@
 .darktheme {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
 
 .dthemeabar {
-  background-color: #1F1F1F;
+    background-color: #1f1f1f;
 }
 
 .dthemeabutton {
-  filter:  invert(100%) hue-rotate(180deg);
+    border-color: white !important;
 }
 
+.dthemeaimg {
+    filter: invert(1);
+}
 .dql-editor {
-  background-color: black;
+    background-color: black;
 }
 
 .dql-container {
-  background-color: black;
+    background-color: black;
 }
 
 .dql-toolbar {
-  filter: invert(1) hue-rotate(240deg);
+    filter: invert(1) hue-rotate(240deg);
 }
 
 .dpopup {
-	background-color: white !important;
-	color: black !important;
+    background-color: white !important;
+    color: black !important;
+}
+
+.dthemeswitch checkbox-square input:checked + label span {
+    box-shadow:
+        inset -3px -3px 0 #000,
+        inset 3px 3px 0 #000 !important;
+}
+
+.dthemeswitch checkbox-square label span {
+    border: 3px solid #FFF !important;
+}
+
+.dthemeswitch checkbox-square label span:before {
+	background-color: #FFF !important;
+    border: 4px solid #000 !important;
 }

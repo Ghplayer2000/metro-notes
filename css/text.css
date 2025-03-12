@@ -4,7 +4,7 @@ a {
 }
 
 .link {
-    color: #af52de;
+    color: #80397b;
     display: inline;
 }
 
@@ -42,11 +42,11 @@ h5 > a:link {
     padding-left: 0px !important;
     text-decoration: none;
     font-weight: 400;
-    color: #a25fde;
+    color: #80397b;
 }
 
 a:visited {
-    color: #a25fde;
+    color: #80397b;
 }
 
 h1 {
