@@ -9,6 +9,9 @@
 
 ## About
 
+> [!WARNING]
+> This project is not maintained anymore.
+
 **Metro Notes** is a simple and elegant notes application inspired by the classic OneNote design from Windows Phone 8.  It offers a clean, distraction-free environment for capturing your thoughts, ideas, and to-dos.
 
 ## Features
